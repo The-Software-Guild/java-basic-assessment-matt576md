@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package mdavismthree.rockpaperscissors;
+
 import java.util.Scanner;
 import java.util.Random;
 /**
@@ -12,28 +13,22 @@ import java.util.Random;
  */
 public class RockPaperScissors {
     //created global variables to store wins ties and best
-    //public static int roundsToPlay = roundsToPlay();
     public static int userWins = 0;
     public static int compWins = 0;
     public static int ties = 0;
     public static String best = null;
+    
     public static void main(String[] args) {
         
     
       
+        do {
     
-    
-    go();
-        while (playAgain())
-        {
             go();
-        }
-    
-    
-    
- 
-        
+        }while (playAgain());
+      
     }
+    
     public static void go()
     {
         
@@ -42,10 +37,10 @@ public class RockPaperScissors {
         
         for (i= 0; i < roundsToPlay; i++ ){
         
-        //user();
-        //computer()
+        
         winner(user(), computer());
         }
+        
         if (userWins > compWins){
             best = "user";
         }
@@ -192,8 +187,10 @@ public static void winner(String user, String computer)
         }
        if (computer.equals("Paper") && user.equals("Scissors"))
         {
+            userWins++;
             System.out.println(" You win: " + userWins);
-        } else if (computer.equals(user))
+        } 
+       if (computer.equals(user))
             ties++;
         {
             System.out.println(" Ties: " + ties);
@@ -201,16 +198,7 @@ public static void winner(String user, String computer)
         
         
         
-     /*if (userWins > compWins){
-            best = "user";
-        }
-     if (compWins > userWins){
-            best = "comp";
-    }else{
-            best = "no one";
-        }
-        System.out.println("Computer won" + " " + compWins + " times, and you won" + " " + userWins + " you tied " + " " + ties + " times." + "The overall winner was" + " " + best);
-*/
+     
 }
 
 } 
